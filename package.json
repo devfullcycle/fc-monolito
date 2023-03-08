@@ -1,0 +1,41 @@
+{
+  "name": "exemple-migrations-sequelize-umzug",
+  "version": "1.0.0",
+  "description": "Exemplo de utilização de Migrations com Sequelize/Umzug",
+  "main": "index.ts",
+  "scripts": {
+    "test": "npm run tsc -- --noEmit && jest",
+    "tsc": "tsc",
+    "migrate": "node -r ts-node/register/transpile-only ./src/test-migrations/config-migrations/migrator-cli.ts"
+  },
+  "keywords": [
+    "Migrations",
+    "Umzug"
+  ],
+  "author": "Lucian Tavares",
+  "license": "ISC",
+  "devDependencies": {
+    "@swc/cli": "^0.1.57",
+    "@swc/core": "^1.3.19",
+    "@swc/jest": "^0.2.23",
+    "@types/express": "^4.17.17",
+    "@types/jest": "^29.2.3",
+    "@types/supertest": "^2.0.12",
+    "@types/uuid": "^8.3.4",
+    "jest": "^29.3.1",
+    "supertest": "^6.2.2",
+    "ts-node": "^10.9.1",
+    "tslint": "^6.1.3",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "@types/node": "^18.13.0",
+    "@types/umzug": "^2.3.3",
+    "express": "^4.18.2",
+    "sequelize": "^6.26.0",
+    "sequelize-typescript": "^2.1.5",
+    "sqlite3": "^5.1.2",
+    "umzug": "^3.2.1",
+    "uuid": "^8.3.2"
+  }
+}
