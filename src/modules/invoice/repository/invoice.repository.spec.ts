@@ -56,5 +56,9 @@ describe("InvoiceRepository test", () => {
     const result = await repository.save(invoice);
 
     expect(result.id.id).toBe(invoice.id.id);
+    expect(result.name).toBe(invoice.name)
+    expect(result.document).toBe(invoice.document)
+    expect(result.address).toBe(invoice.address)
+    expect(result.items).toBe(invoice.items)
   });
 });

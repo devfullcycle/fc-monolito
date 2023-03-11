@@ -1,15 +1,19 @@
-import { Column, Model, PrimaryKey, Table } from "sequelize-typescript";
+import ProductModel from "./product.model";
+import InvoiceProductsModel from "./invoice_products.model";
+
+import { Column, BelongsToMany, Model, PrimaryKey, Table } from "sequelize-typescript";
 
 @Table({
   tableName: "invoices",
   timestamps: false,
 })
+
 export default class InvoiceModel extends Model {
   @PrimaryKey
   @Column({ allowNull: false })
   id: string;
 
-  @Column({ allowNull: false, field: "order_id" })
+  @Column({ allowNull: false })
   name: string;
 
   @Column({ allowNull: false })
@@ -33,8 +37,10 @@ export default class InvoiceModel extends Model {
   @Column({ allowNull: false })
   address_zipCode: string;
 
-  @Column({ allowNull: false })
-  product_ids: string
+  @BelongsToMany(() => ProductModel, {
+    through: { model: () => InvoiceProductsModel },
+  })
+  items: ProductModel[];
 
   @Column({ allowNull: false, field: "created_at" })
   createdAt: Date;
