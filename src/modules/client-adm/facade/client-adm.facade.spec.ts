@@ -17,7 +17,8 @@ describe("ClientAdmFacade test", () => {
       sync: { force: true },
     });
 
-    await sequelize.addModels([ClientModel]);
+    sequelize.addModels([ClientModel]);
+
     await sequelize.sync();
   });
 

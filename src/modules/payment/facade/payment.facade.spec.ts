@@ -13,7 +13,8 @@ describe("PaymentFacade test", () => {
       sync: { force: true },
     });
 
-    await sequelize.addModels([TransactionModel]);
+    sequelize.addModels([TransactionModel]);
+
     await sequelize.sync();
   });
 

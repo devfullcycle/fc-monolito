@@ -13,7 +13,8 @@ describe("ProductAdmFacade test", () => {
       sync: { force: true },
     });
 
-    await sequelize.addModels([ProductModel]);
+    sequelize.addModels([ProductModel]);
+
     await sequelize.sync();
   });
 

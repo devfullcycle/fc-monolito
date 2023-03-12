@@ -19,7 +19,8 @@ describe("InvoiceRepository test", () => {
       sync: { force: true },
     });
 
-    await sequelize.addModels([InvoiceModel, InvoiceProductModel, ProductModel]);
+    sequelize.addModels([InvoiceModel, InvoiceProductModel, ProductModel]);
+
     await sequelize.sync();
   });
 
