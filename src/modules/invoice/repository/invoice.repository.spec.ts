@@ -6,8 +6,7 @@ import InvoiceModel from "./invoice.model";
 import Address from "../../@shared/domain/value-object/address.value-object";
 import InvoiceRepostiory from "./invoice.repository";
 import ProductModel from "./product.model";
-import { InvoiceProductModel } from "./invoice-product.model";
-
+import InvoiceProductModel from "./invoice-product.model";
 
 describe("InvoiceRepository test", () => {
   let sequelize: Sequelize;
@@ -28,7 +27,7 @@ describe("InvoiceRepository test", () => {
     await sequelize.close();
   });
 
-  it("should save a invoice", async () => {
+  it("should create a invoice", async () => {
     const invoice = new Invoice({
       id: new Id("1"),
       name: "invoice name",
@@ -56,7 +55,7 @@ describe("InvoiceRepository test", () => {
     });
 
     const repository = new InvoiceRepostiory();
-    const result = await repository.save(invoice);
+    const result = await repository.create(invoice);
 
     expect(result.id.id).toBe(invoice.id.id);
     expect(result.name).toBe(invoice.name)

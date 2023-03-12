@@ -3,12 +3,12 @@ import Product from "../domain/product.entity";
 import PaymentGateway from "../gateway/invoice.gateway";
 import InvoiceModel from "./invoice.model";
 import ProductModel from "./product.model";
-import { InvoiceProductModel } from "./invoice-product.model";
+import InvoiceProductModel from "./invoice-product.model";
 import Address from "../../@shared/domain/value-object/address.value-object";
 import Id from "../../@shared/domain/value-object/id.value-object";
 
 export default class InvoiceRepository implements PaymentGateway {
-  async save(input: Invoice): Promise<Invoice> {
+  async create(input: Invoice): Promise<Invoice> {
     await InvoiceModel.create({
       id: input.id.id,
       name: input.name,

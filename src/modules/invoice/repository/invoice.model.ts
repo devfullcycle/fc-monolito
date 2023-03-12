@@ -1,12 +1,9 @@
 import ProductModel from "./product.model";
-import { InvoiceProductModel } from "./invoice-product.model";
+import InvoiceProductModel from "./invoice-product.model";
 
 import { Column, BelongsToMany, Model, PrimaryKey, Table } from "sequelize-typescript";
 
-@Table({
-  tableName: "invoices",
-  timestamps: false,
-})
+@Table({ tableName: "invoices", timestamps: false })
 
 export default class InvoiceModel extends Model {
   @PrimaryKey
