@@ -28,7 +28,7 @@ describe("InvoiceRepository test", () => {
     await sequelize.close();
   });
 
-  it("should create a invoice", async () => {
+  it("creates an invoice", async () => {
     const invoice = new Invoice({
       id: new Id("1"),
       name: "invoice name",
