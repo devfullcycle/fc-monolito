@@ -1,5 +1,5 @@
 import ProductModel from "./product.model";
-import InvoiceProductsModel from "./invoice_products.model";
+import { InvoiceProductModel } from "./invoice-product.model";
 
 import { Column, BelongsToMany, Model, PrimaryKey, Table } from "sequelize-typescript";
 
@@ -38,7 +38,7 @@ export default class InvoiceModel extends Model {
   address_zipCode: string;
 
   @BelongsToMany(() => ProductModel, {
-    through: { model: () => InvoiceProductsModel },
+    through: { model: () => InvoiceProductModel },
   })
   items: ProductModel[];
 

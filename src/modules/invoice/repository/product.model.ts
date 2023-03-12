@@ -13,5 +13,5 @@ export default class ProductModel extends Model {
   name: string;
 
   @Column({ allowNull: false })
-  document: string;
+  price: number;
 }

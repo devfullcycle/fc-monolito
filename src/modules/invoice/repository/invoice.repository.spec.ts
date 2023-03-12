@@ -5,6 +5,9 @@ import Product from "../domain/product.entity";
 import InvoiceModel from "./invoice.model";
 import Address from "../../@shared/domain/value-object/address.value-object";
 import InvoiceRepostiory from "./invoice.repository";
+import ProductModel from "./product.model";
+import { InvoiceProductModel } from "./invoice-product.model";
+
 
 describe("InvoiceRepository test", () => {
   let sequelize: Sequelize;
@@ -17,7 +20,7 @@ describe("InvoiceRepository test", () => {
       sync: { force: true },
     });
 
-    await sequelize.addModels([InvoiceModel]);
+    await sequelize.addModels([InvoiceModel, InvoiceProductModel, ProductModel]);
     await sequelize.sync();
   });
 
