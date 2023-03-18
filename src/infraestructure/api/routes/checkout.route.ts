@@ -1,6 +1,6 @@
 import express, { Request, Response } from "express";
-import PaymentProcessUseCase from "../../../payment/usecase/process-payment/process-payment.usecase";
-import PaymentTransactionRepository from "../../../payment/repository/transaction.repository"
+import PaymentProcessUseCase from "../../../modules/payment/usecase/process-payment/process-payment.usecase";
+import PaymentTransactionRepository from "../../../modules/payment/repository/transaction.repository"
 
 export const checkoutRoute = express.Router();
 

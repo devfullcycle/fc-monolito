@@ -3,13 +3,13 @@ import { Sequelize } from "sequelize-typescript";
 import { productsRoute } from "./routes/products.route";
 import { clientsRoute } from "./routes/clients.route";
 import { checkoutRoute } from "./routes/checkout.route";
-import { ClientModel as ClientAdmClientModel } from "../../client-adm/repository/client.model"
-import { default as InvoiceInvoiceModel } from "../../invoice/repository/invoice.model"
-import { default as InvoiceProductModel } from "../../invoice/repository/product.model"
-import { default as InvoiceInvoiceProductModel } from "../../invoice/repository/product.model"
-import { default as PaymentTransactionModel } from "../../payment/repository/transaction.model"
-import { default as ProductProductModel } from "../../product-adm/repository/product.model"
-import { default as StoreCatalogProductModel } from "../../store-catalog/repository/product.model"
+import { default as ClientAdmClientModel } from "../../modules/client-adm/repository/client.model"
+import { default as InvoiceInvoiceModel } from "../../modules/invoice/repository/invoice.model"
+import { default as InvoiceProductModel } from "../../modules/invoice/repository/product.model"
+import { default as InvoiceInvoiceProductModel } from "../../modules/invoice/repository/product.model"
+import { default as PaymentTransactionModel } from "../../modules/payment/repository/transaction.model"
+import { default as ProductProductModel } from "../../modules/product-adm/repository/product.model"
+import { default as StoreCatalogProductModel } from "../../modules/store-catalog/repository/product.model"
 
 export const app: Express = express();
 app.use(express.json());
@@ -25,6 +25,7 @@ async function setupDb() {
     storage: ":memory:",
     logging: false,
   });
+
   await sequelize.addModels([
     ClientAdmClientModel,
     InvoiceInvoiceModel,

@@ -1,6 +1,6 @@
 import express, { Request, Response } from "express";
-import ClientAdmAddClientUseCase from "../../../client-adm/usecase/add-client/add-client.usecase";
-import ClientAdmClientRepository from "../../../client-adm/repository/client.repository"
+import ClientAdmAddClientUseCase from "../../../modules/client-adm/usecase/add-client/add-client.usecase";
+import ClientAdmClientRepository from "../../../modules/client-adm/repository/client.repository"
 
 export const clientsRoute = express.Router();
 
