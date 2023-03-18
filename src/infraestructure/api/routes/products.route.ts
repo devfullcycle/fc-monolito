@@ -14,6 +14,7 @@ productsRoute.get("/", async (req: Request, res: Response) => {
 
     res.send(output);
   } catch (err) {
+    console.log(err)
     res.status(500).send(err);
   }
 });

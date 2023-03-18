@@ -7,3 +7,12 @@
 ## Run server
 
 `npm run server`
+
+# Requests
+
+## Get products
+
+```
+curl localhost:3030/product
+{"products":[]}
+```
