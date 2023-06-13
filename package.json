@@ -14,14 +14,15 @@
   },
   "scripts": {
     "test": "npm run tsc -- --noEmit && jest",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "server": "nodemon src/infraestructure/api/server.ts"
   },
   "dependencies": {
     "@types/express": "^4.17.13",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "jstoxml": "^3.2.3",
-    "nodemon": "^2.0.15",
+    "nodemon": "^2.0.21",
     "reflect-metadata": "^0.1.13",
     "sequelize": "^6.17.0",
     "sequelize-typescript": "^2.1.3",
