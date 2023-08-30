@@ -1,26 +1,44 @@
 import { Column, Model, PrimaryKey, Table } from "sequelize-typescript";
 
 @Table({
-  tableName: "clients",
-  timestamps: false,
+  tableName: 'client',
+  timestamps: false
 })
 export class ClientModel extends Model {
   @PrimaryKey
   @Column({ allowNull: false })
-  id: string;
+  id: string
 
   @Column({ allowNull: false })
-  name: string;
+  name: string
 
   @Column({ allowNull: false })
-  email: string;
+  email: string
 
   @Column({ allowNull: false })
-  address: string;
+  document: string
 
   @Column({ allowNull: false })
-  createdAt: Date;
+  street: string
 
   @Column({ allowNull: false })
-  updatedAt: Date;
+  number: string
+
+  @Column({ allowNull: true })
+  complement: string
+
+  @Column({ allowNull: false })
+  city: string
+
+  @Column({ allowNull: false })
+  state: string
+
+  @Column({ allowNull: false })
+  zipcode: string
+
+  @Column({ allowNull: false })
+  createdAt: Date
+
+  @Column({ allowNull: false })
+  updatedAt: Date
 }
