@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npm run tsc -- --noEmit && jest",
+    "test": "npm run tsc -- --noEmit && jest --coverage --coverageReporters='text-summary' --coverageReporters='lcov'",
     "tsc": "tsc",
     "build": "tsc",
     "start": "node dist/server.js",
